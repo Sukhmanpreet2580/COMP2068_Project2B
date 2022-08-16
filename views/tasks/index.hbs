@@ -1,0 +1,24 @@
+<a href="/tasks/create" class="btn btn-new-task btn-dark " >Add new Student</a>
+<!--table-->
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col">Registration</th>
+        <th scope="col">Student Number</th>
+    </tr>
+    </thead>
+
+
+    {{#each studentName}}
+    <tbody
+
+    <tr class="table table-dark table-striped table-bordered">
+        <td>{{this.studentName}}</td>
+        <td>{{this.Registration}}</td>
+        <td>{{this.studentNumber}}</td>
+        <td><a href="/tasks/edit/{{this._id}}" class="btn btn-success">Edit</a></td>
+        <td><a href="/tasks/delete/{{this._id}}" class="btn btn-danger" onclick="return confirmDelete()">Delete</a></td>
+    </tbody>
+    {{/each}}
+</table>
